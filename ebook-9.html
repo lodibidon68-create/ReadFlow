@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligence Artificielle - ReadFlow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #e8d5f2 100%); color: #333; line-height: 1.8; padding: 40px 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 60px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .back-button { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #667eea 0%, #9b59b6 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 700; margin-bottom: 30px; }
+        h1 { font-family: 'Poppins', sans-serif; font-size: 3rem; font-weight: 900; background: linear-gradient(135deg, #667eea 0%, #9b59b6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center; margin-bottom: 15px; }
+        .author { font-size: 1.3rem; color: #666; font-weight: 600; text-align: center; margin-bottom: 50px; padding-bottom: 30px; border-bottom: 3px solid #9b59b6; }
+        h2 { font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 800; color: #8e44ad; margin: 40px 0 20px; }
+        p { margin-bottom: 20px; font-size: 1.1rem; text-align: justify; }
+        .quote { background: linear-gradient(135deg, #f8f5fc 0%, #e8d5f2 100%); padding: 30px; border-left: 5px solid #9b59b6; margin: 30px 0; border-radius: 10px; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="boutique-ebooks.html" class="back-button">← Retour à la boutique</a>
+        <h1>Intelligence Artificielle</h1>
+        <p class="author">par David Chen</p>
+        <h2>Introduction : L'Ère de l'IA</h2>
+        <p>L'intelligence artificielle n'est plus de la science-fiction - c'est notre réalité quotidienne. Ce guide démystifie l'IA et vous montre comment l'appliquer concrètement dans vos projets.</p>
+        
+        <h2>Chapitre 1 : Qu'est-ce que l'Intelligence Artificielle ?</h2>
+        <p>L'IA est la capacité d'une machine à imiter l'intelligence humaine : apprendre, raisonner, résoudre des problèmes, percevoir. Elle se divise en IA faible (spécialisée dans une tâche) et IA forte (intelligence généraliste, encore théorique). Aujourd'hui, toute l'IA que nous utilisons est "faible" mais extrêmement puissante.</p>
+        <p>Le machine learning est un sous-ensemble de l'IA où les machines apprennent à partir de données sans être explicitement programmées. Le deep learning, basé sur les réseaux de neurones, est un sous-ensemble du ML qui excelle dans les données complexes (images, texte, son).</p>
+        
+        <h2>Chapitre 2 : Les Algorithmes Fondamentaux</h2>
+        <p>Supervised learning : l'algorithme apprend à partir de données étiquetées (exemples : classification d'emails en spam/non-spam, prédiction de prix immobiliers). Unsupervised learning : l'algorithme trouve des patterns dans des données non étiquetées (clustering de clients, détection d'anomalies).</p>
+        <p>Reinforcement learning : l'algorithme apprend par essai-erreur avec un système de récompenses (jeux vidéo, robotique, voitures autonomes). Chaque approche a ses cas d'usage spécifiques. Comprendre quand utiliser laquelle est crucial.</p>
+        
+        <div class="quote">
+            "L'intelligence artificielle serait la dernière invention de l'humanité." - Nick Bostrom
+        </div>
+        
+        <h2>Chapitre 3 : Les Réseaux de Neurones</h2>
+        <p>Inspirés du cerveau humain, les réseaux de neurones artificiels sont composés de couches de neurones interconnectés. Chaque connexion a un "poids" ajusté pendant l'entraînement. Les réseaux profonds (deep learning) empilent de nombreuses couches pour apprendre des représentations hiérarchiques complexes.</p>
+        <p>CNN (Convolutional Neural Networks) excellent pour les images. RNN (Recurrent Neural Networks) et Transformers pour les séquences (texte, séries temporelles). GANs (Generative Adversarial Networks) créent du contenu réaliste. Chaque architecture résout des problèmes spécifiques.</p>
+        
+        <h2>Chapitre 4 : Traitement du Langage Naturel (NLP)</h2>
+        <p>Le NLP permet aux machines de comprendre et générer du langage humain. Les applications vont de la traduction automatique aux chatbots, de l'analyse de sentiments à la génération de texte. Les transformers (comme GPT et BERT) ont révolutionné le domaine ces dernières années.</p>
+        <p>L'embeddings vectoriel transforme les mots en vecteurs mathématiques capturant leur sens. Des mots similaires ont des vecteurs proches. Cette représentation permet aux algorithmes de "comprendre" le sens et le contexte du langage.</p>
+        
+        <h2>Chapitre 5 : Vision par Ordinateur</h2>
+        <p>La vision par ordinateur permet aux machines de "voir" et interpréter les images. Classification (identifier ce qui est dans l'image), détection d'objets (localiser plusieurs objets), segmentation (délimiter précisément), reconnaissance faciale, et bien plus.</p>
+        <p>Les applications pratiques sont infinies : diagnostic médical (détection de cancers sur radiographies), véhicules autonomes, contrôle qualité industriel, agriculture de précision, réalité augmentée. La précision des systèmes modernes surpasse souvent l'humain.</p>
+        
+        <h2>Chapitre 6 : Éthique et IA</h2>
+        <p>Avec un grand pouvoir vient une grande responsabilité. L'IA soulève des questions éthiques cruciales : biais algorithmiques (reproduire ou amplifier les préjugés humains), vie privée (collecte et utilisation des données), emploi (automatisation des tâches), accountability (qui est responsable quand l'IA se trompe ?).</p>
+        <p>L'explicabilité (comprendre pourquoi l'IA prend telle décision) est cruciale pour les applications critiques (médecine, justice). L'IA responsible n'est pas un luxe - c'est une nécessité. Les développeurs ont la responsabilité de construire des systèmes équitables et transparents.</p>
+        
+        <h2>Chapitre 7 : Démarrer votre Projet IA</h2>
+        <p>Commencez par un problème business clair que l'IA peut résoudre. Avez-vous les données nécessaires ? La qualité et la quantité de données sont cruciales. Commencez simple (un modèle baseline), puis itérez vers la complexité si nécessaire.</p>
+        <p>Les frameworks modernes (TensorFlow, PyTorch, scikit-learn) rendent l'IA accessible. Les services cloud (AWS SageMaker, Google AI Platform, Azure ML) offrent de la puissance de calcul et des outils pré-construits. Vous n'avez pas besoin d'être un expert pour commencer.</p>
+        
+        <h2>Conclusion : L'Avenir Appartient à Ceux qui Agissent</h2>
+        <p>L'IA transforme chaque industrie. Les opportunités sont immenses, mais la fenêtre d'action se rétrécit. Les compétences en IA seront aussi fondamentales demain que savoir lire et écrire aujourd'hui.</p>
+        <p>Ne soyez pas paralysé par la complexité apparente. Commencez à apprendre, à expérimenter, à construire. Chaque grand voyage commence par un premier pas. Votre voyage dans l'IA commence maintenant.</p>
+        <p style="text-align: center; margin-top: 50px; font-size: 1.2rem; color: #9b59b6; font-weight: 700;">
+            Merci d'avoir lu ! 📚
+        </p>
+    </div>
+</body>
+</html>

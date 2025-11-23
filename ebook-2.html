@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Moderne - ReadFlow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8d5f2 100%);
+            color: #333;
+            line-height: 1.8;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #9b59b6 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .book-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #9b59b6;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #9b59b6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .author {
+            font-size: 1.3rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .chapter {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #8e44ad;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            overflow-x: auto;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            border-left: 5px solid #667eea;
+        }
+
+        .code-inline {
+            background: #f4f4f4;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+            color: #9b59b6;
+            font-weight: 600;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #e8f4fd 0%, #d5e8f2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .tip-box h4 {
+            color: #667eea;
+            font-weight: 800;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fff4e6 0%, #ffe0b2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #ff9800;
+        }
+
+        .warning-box h4 {
+            color: #ff9800;
+            font-weight: 800;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        ul {
+            margin: 20px 0 20px 40px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .quote {
+            background: linear-gradient(135deg, #f8f5fc 0%, #e8d5f2 100%);
+            padding: 30px;
+            border-left: 5px solid #9b59b6;
+            margin: 30px 0;
+            border-radius: 10px;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .code-block {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="boutique-ebooks.html" class="back-button">← Retour à la boutique</a>
+        
+        <div class="book-header">
+            <h1>JavaScript Moderne</h1>
+            <p class="author">par Thomas Dupont</p>
+        </div>
+
+        <div class="chapter">
+            <h2>Introduction : L'Évolution de JavaScript</h2>
+            <p>
+                JavaScript a parcouru un long chemin depuis sa création en 1995. De langage de script simple 
+                pour animer des pages web, il est devenu l'un des langages les plus puissants et polyvalents 
+                de l'écosystème du développement moderne. Avec l'avènement d'ES6 (ECMAScript 2015) et les 
+                versions ultérieures, JavaScript a acquis des fonctionnalités qui le placent au même niveau 
+                que les langages traditionnellement considérés comme plus "sérieux".
+            </p>
+            <p>
+                Ce guide vous emmène à travers les concepts fondamentaux et avancés du JavaScript moderne, 
+                avec des exemples pratiques et des cas d'usage concrets. Que vous soyez débutant ou développeur 
+                expérimenté cherchant à mettre à jour vos connaissances, vous trouverez ici les clés pour 
+                maîtriser ce langage incontournable.
+            </p>
+
+            <div class="quote">
+                "N'importe quelle application qui peut être écrite en JavaScript finira par être écrite en JavaScript." - Loi d'Atwood
+            </div>
+        </div>
+
+        <div class="chapter">
+            <h2>Chapitre 1 : Les Fondamentaux ES6+</h2>
+            
+            <h3>Let et Const : La Fin de Var</h3>
+            <p>
+                L'une des premières évolutions majeures d'ES6 concerne la déclaration des variables. 
+                Les mots-clés <span class="code-inline">let</span> et <span class="code-inline">const</span> 
+                remplacent avantageusement <span class="code-inline">var</span> en offrant une portée de bloc 
+                et en évitant de nombreux bugs courants.
+            </p>
+
+            <div class="code-block">// Avant ES6 (à éviter)
+var nom = "Alice";
+var age = 25;
+
+// ES6+ (recommandé)
+const nom = "Alice";  // Valeur non réassignable
+let age = 25;         // Valeur réassignable
+
+// Portée de bloc
+if (true) {
+    let message = "Hello";
+    console.log(message); // Fonctionne
+}
+console.log(message); // Erreur : message n'existe pas ici</div>
+
+            <div class="tip-box">
+                <h4>💡 Bonne pratique</h4>
+                <p>Utilisez toujours <span class="code-inline">const</span> par défaut, et <span class="code-inline">let</span> uniquement quand vous avez besoin de réassigner la variable. N'utilisez jamais <span class="code-inline">var</span> dans du code moderne.</p>
+            </div>
+
+            <h3>Arrow Functions : Syntaxe Concise et This Lexical</h3>
+            <p>
+                Les fonctions fléchées offrent une syntaxe plus courte et résolvent les problèmes de binding 
+                du <span class="code-inline">this</span> qui ont longtemps tourmenté les développeurs JavaScript.
+            </p>
+
+            <div class="code-block">// Fonction traditionnelle
+function addition(a, b) {
+    return a + b;
+}
+
+// Arrow function
+const addition = (a, b) => a + b;
+
+// Sans paramètres
+const direBonjour = () => console.log("Bonjour !");
+
+// Un seul paramètre (parenthèses optionnelles)
+const doubler = n => n * 2;
+
+// Corps de fonction multiligne
+const calculer = (a, b) => {
+    const resultat = a + b;
+    console.log(`Résultat: ${resultat}`);
+    return resultat;
+};
+
+// This lexical - super utile !
+class Compteur {
+    constructor() {
+        this.count = 0;
+    }
+    
+    incrementer() {
+        // Arrow function conserve le this de la classe
+        setInterval(() => {
+            this.count++;
+            console.log(this.count);
+        }, 1000);
+    }
+}</div>
+
+            <h3>Template Literals : Chaînes Interpolées</h3>
+            <p>
+                Les template literals utilisent les backticks (<span class="code-inline">`</span>) et 
+                permettent l'interpolation de variables et les chaînes multi-lignes.
+            </p>
+
+            <div class="code-block">const prenom = "Alice";
+const age = 25;
+
+// Ancienne méthode (à éviter)
+const message = "Bonjour, je m'appelle " + prenom + " et j'ai " + age + " ans.";
+
+// Template literal (moderne)
+const message = `Bonjour, je m'appelle ${prenom} et j'ai ${age} ans.`;
+
+// Multi-lignes sans \n
+const poeme = `
+    Les roses sont rouges,
+    Les violettes sont bleues,
+    JavaScript est génial,
+    Et vous le savez bien !
+`;
+
+// Expressions dans les templates
+const prix = 100;
+const tva = 0.20;
+console.log(`Prix TTC: ${prix * (1 + tva)}€`);</div>
+        </div>
+
+        <div class="chapter">
+            <h2>Chapitre 2 : Destructuration et Spread</h2>
+            
+            <h3>Destructuration d'Objets et de Tableaux</h3>
+            <p>
+                La destructuration permet d'extraire des valeurs d'objets ou de tableaux de manière élégante 
+                et concise.
+            </p>
+
+            <div class="code-block">// Destructuration d'objets
+const personne = {
+    nom: "Dupont",
+    prenom: "Alice",
+    age: 25,
+    ville: "Paris"
+};
+
+// Extraction de propriétés
+const { nom, prenom, age } = personne;
+console.log(nom); // "Dupont"
+
+// Renommage de variables
+const { nom: nomDeFamille, prenom: prenomPersonne } = personne;
+
+// Valeurs par défaut
+const { pays = "France" } = personne;
+
+// Destructuration imbriquée
+const utilisateur = {
+    id: 1,
+    info: {
+        nom: "Martin",
+        email: "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="82efe3f0f6ebecc2e7fae3eff2eee7ace1edef">[email&#160;protected]</a>"
+    }
+};
+
+const { info: { nom, email } } = utilisateur;
+
+// Destructuration de tableaux
+const couleurs = ["rouge", "vert", "bleu"];
+const [premiere, deuxieme, troisieme] = couleurs;
+
+// Ignorer des éléments
+const [, , troisieme] = couleurs;
+
+// Reste des éléments
+const [premiere, ...autres] = couleurs;
+console.log(autres); // ["vert", "bleu"]</div>
+
+            <h3>Opérateurs Spread et Rest</h3>
+            <p>
+                L'opérateur <span class="code-inline">...</span> (trois points) est polyvalent : 
+                il peut "étaler" des éléments (spread) ou les "rassembler" (rest).
+            </p>
+
+            <div class="code-block">// Spread avec des tableaux
+const nombres1 = [1, 2, 3];
+const nombres2 = [4, 5, 6];
+const tous = [...nombres1, ...nombres2];
+console.log(tous); // [1, 2, 3, 4, 5, 6]
+
+// Copie d'un tableau
+const copie = [...nombres1];
+
+// Spread avec des objets
+const personne = { nom: "Alice", age: 25 };
+const employe = { ...personne, poste: "Développeuse" };
+console.log(employe); 
+// { nom: "Alice", age: 25, poste: "Développeuse" }
+
+// Rest parameters dans les fonctions
+function additionner(...nombres) {
+    return nombres.reduce((total, n) => total + n, 0);
+}
+
+console.log(additionner(1, 2, 3, 4, 5)); // 15
+
+// Rest dans la destructuration
+const { nom, ...reste } = personne;
+console.log(reste); // { age: 25 }</div>
+
+            <div class="tip-box">
+                <h4>💡 Cas d'usage courant</h4>
+                <p>Le spread est particulièrement utile pour créer des copies d'objets ou de tableaux sans modifier l'original - essentiel pour la programmation immutable et React !</p>
+            </div>
+        </div>
+
+        <div class="chapter">
+            <h2>Chapitre 3 : Programmation Asynchrone Moderne</h2>
+            
+            <h3>Comprendre les Promesses</h3>
+            <p>
+                Les Promesses représentent une valeur qui peut être disponible maintenant, plus tard, ou jamais. 
+                Elles ont révolutionné la gestion de l'asynchrone en JavaScript.
+            </p>
+
+            <div class="code-block">// Créer une promesse
+const maPromesse = new Promise((resolve, reject) => {
+    const succes = true;
+    
+    setTimeout(() => {
+        if (succes) {
+            resolve("Opération réussie !");
+        } else {
+            reject("Erreur survenue");
+        }
+    }, 2000);
+});
+
+// Utiliser une promesse
+maPromesse
+    .then(resultat => {
+        console.log(resultat);
+        return "Traitement suivant";
+    })
+    .then(nouveau => {
+        console.log(nouveau);
+    })
+    .catch(erreur => {
+        console.error(erreur);
+    })
+    .finally(() => {
+        console.log("Terminé !");
+    });
+
+// Promise.all - exécuter plusieurs promesses en parallèle
+const promesses = [
+    fetch('/api/user'),
+    fetch('/api/posts'),
+    fetch('/api/comments')
+];
+
+Promise.all(promesses)
+    .then(([user, posts, comments]) => {
+        console.log("Toutes les données sont chargées !");
+    })
+    .catch(erreur => {
+        console.error("Une erreur est survenue");
+    });</div>
+
+            <h3>Async/Await : L'Asynchrone qui Ressemble au Synchrone</h3>
+            <p>
+                Introduit dans ES2017, <span class="code-inline">async/await</span> rend le code asynchrone 
+                beaucoup plus lisible et facile à comprendre.
+            </p>
+
+            <div class="code-block">// Fonction async retourne toujours une promesse
+async function chargerDonnees() {
+    try {
+        // await "attend" la résolution de la promesse
+        const reponse = await fetch('/api/data');
+        const donnees = await reponse.json();
+        
+        console.log(donnees);
+        return donnees;
+        
+    } catch (erreur) {
+        console.error("Erreur lors du chargement:", erreur);
+        throw erreur;
+    }
+}
+
+// Appel de fonction async
+chargerDonnees()
+    .then(donnees => console.log("Données chargées:", donnees));
+
+// Async/await dans une boucle
+async function chargerPlusieurs() {
+    const ids = [1, 2, 3, 4, 5];
+    
+    // Séquentiel (un après l'autre)
+    for (const id of ids) {
+        const data = await fetch(`/api/item/${id}`);
+        console.log(await data.json());
+    }
+    
+    // Parallèle (tous en même temps)
+    const promesses = ids.map(id => 
+        fetch(`/api/item/${id}`).then(r => r.json())
+    );
+    const resultats = await Promise.all(promesses);
+    console.log(resultats);
+}</div>
+
+            <div class="warning-box">
+                <h4>⚠️ Attention</h4>
+                <p>N'oubliez pas le <span class="code-inline">await</span> ! Sans lui, vous récupérez une promesse et non la valeur. Et utilisez toujours <span class="code-inline">try/catch</span> pour gérer les erreurs.</p>
+            </div>
+        </div>
+
+        <div class="chapter">
+            <h2>Chapitre 4 : Modules ES6</h2>
+            
+            <h3>Import et Export</h3>
+            <p>
+                Les modules ES6 permettent d'organiser votre code en fichiers séparés et réutilisables, 
+                améliorant considérablement la maintenabilité des applications.
+            </p>
+
+            <div class="code-block">// --- fichier: utils.js ---
+// Export nommé
+export const PI = 3.14159;
+
+export function addition(a, b) {
+    return a + b;
+}
+
+export class Calculatrice {
+    multiplier(a, b) {
+        return a * b;
+    }
+}
+
+// --- fichier: math.js ---
+// Export par défaut (un seul par fichier)
+export default function soustraire(a, b) {
+    return a - b;
+}
+
+// --- fichier: app.js ---
+// Import nommé
+import { PI, addition, Calculatrice } from './utils.js';
+
+// Import par défaut
+import soustraire from './math.js';
+
+// Import avec renommage
+import { addition as add } from './utils.js';
+
+// Import tout
+import * as Utils from './utils.js';
+console.log(Utils.PI);
+console.log(Utils.addition(2, 3));
+
+// Import dynamique (lazy loading)
+async function chargerModule() {
+    const module = await import('./grosFichier.js');
+    module.fonctionLourde();
+}</div>
+
+            <div class="tip-box">
+                <h4>💡 Organisation du code</h4>
+                <p>Structurez votre code en modules logiques : un module par fonctionnalité ou par type de composant. Cela rend votre code plus facile à tester, à maintenir et à faire évoluer.</p>
+            </div>
+        </div>
+
+        <div class="chapter">
+            <h2>Chapitre 5 : Fonctionnalités Avancées</h2>
+            
+            <h3>Optional Chaining et Nullish Coalescing</h3>
+            <p>
+                Ces opérateurs récents (ES2020) simplifient grandement l'accès aux propriétés potentiellement 
+                nulles ou undefined.
+            </p>
+
+            <div class="code-block">// Optional chaining (?.)
+const utilisateur = {
+    nom: "Alice",
+    adresse: {
+        ville: "Paris"
+    }
+};
+
+// Sans optional chaining (ancien)
+const pays = utilisateur && 
+              utilisateur.adresse && 
+              utilisateur.adresse.pays;
+
+// Avec optional chaining (moderne)
+const pays = utilisateur?.adresse?.pays;
+console.log(pays); // undefined (pas d'erreur)
+
+// Fonctionne aussi avec les méthodes
+utilisateur.direBonjour?.(); // Pas d'erreur si non défini
+
+// Nullish coalescing (??)
+const valeur = null;
+const valeurParDefaut = valeur ?? "Défaut";
+console.log(valeurParDefaut); // "Défaut"
+
+// Différence avec ||
+const nombre = 0;
+console.log(nombre || 10);  // 10 (0 est falsy)
+console.log(nombre ?? 10);  // 0 (seuls null/undefined déclenchent ??)</div>
+
+            <h3>Map, Filter, Reduce : La Trinité Fonctionnelle</h3>
+            <p>
+                Ces méthodes de tableaux sont essentielles pour la programmation fonctionnelle en JavaScript.
+            </p>
+
+            <div class="code-block">const nombres = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Map : transformer chaque élément
+const doubles = nombres.map(n => n * 2);
+console.log(doubles); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+// Filter : garder certains éléments
+const pairs = nombres.filter(n => n % 2 === 0);
+console.log(pairs); // [2, 4, 6, 8, 10]
+
+// Reduce : réduire à une seule valeur
+const somme = nombres.reduce((total, n) => total + n, 0);
+console.log(somme); // 55
+
+// Combiner plusieurs opérations
+const resultat = nombres
+    .filter(n => n % 2 === 0)  // Garder les pairs
+    .map(n => n * 3)           // Tripler
+    .reduce((total, n) => total + n, 0); // Sommer
+
+console.log(resultat); // 90
+
+// Cas pratique : grouper des objets
+const produits = [
+    { nom: "Pomme", categorie: "Fruit", prix: 2 },
+    { nom: "Carotte", categorie: "Légume", prix: 1 },
+    { nom: "Banane", categorie: "Fruit", prix: 3 }
+];
+
+const parCategorie = produits.reduce((acc, produit) => {
+    const cat = produit.categorie;
+    if (!acc[cat]) acc[cat] = [];
+    acc[cat].push(produit);
+    return acc;
+}, {});
+
+console.log(parCategorie);
+// { Fruit: [...], Légume: [...] }</div>
+        </div>
+
+        <div class="chapter">
+            <h2>Conclusion : Continuer à Apprendre</h2>
+            <p>
+                JavaScript est un langage en constante évolution. Chaque année apporte son lot de nouvelles 
+                fonctionnalités grâce aux mises à jour régulières d'ECMAScript. Les concepts que vous avez 
+                appris dans ce guide constituent les fondations solides du JavaScript moderne.
+            </p>
+            <p>
+                Pour approfondir vos connaissances, explorez les frameworks et bibliothèques populaires 
+                (React, Vue, Node.js), plongez dans TypeScript pour ajouter du typage statique, et surtout, 
+                pratiquez régulièrement en construisant des projets concrets.
+            </p>
+
+            <div class="tip-box">
+                <h4>🚀 Prochaines étapes recommandées</h4>
+                <ul>
+                    <li>Construisez un projet personnel en utilisant les concepts appris</li>
+                    <li>Explorez les Design Patterns en JavaScript</li>
+                    <li>Apprenez TypeScript pour améliorer la qualité de votre code</li>
+                    <li>Maîtrisez un framework frontend (React, Vue ou Angular)</li>
+                    <li>Découvrez Node.js pour le développement backend</li>
+                </ul>
+            </div>
+
+            <p style="text-align: center; margin-top: 50px; font-size: 1.2rem; color: #9b59
